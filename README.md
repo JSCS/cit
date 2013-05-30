@@ -1,7 +1,7 @@
 Hackathon
 =========
 
-[Live Demo of This Code](http://jakl.github.com/cit)
+[Live Demo of This Code](http://JSCS.github.com/pleasant-script)
 
 [Wordpress Colaberation Demo](http://pleasantviewer.org)
 

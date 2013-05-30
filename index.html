@@ -3,20 +3,45 @@
 <head>
   <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
+  #tooltip {font-size: 10px}
+  #citations {margin-bottom: 2px; margin-left: 8px}
+  .container-well {padding-bottom: 4px}
+  html>body #sortable li { height: 1.5em; line-height: 1.2em; }
+  .ui-state-highlight { height: 0px; line-height: 10px; }
+  </style>
+  <script>
+  $(function() {
+  $( "#check" ).button();
+    $( "#dragndrop" ).button();
+    $( "#sortable" ).sortable({
+      placeholder: "ui-state-highlight"
+    });
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
 </head>
 <body>
-  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>  
   <script src="index.js"></script>
 
   <div class="container well">        
-    <div id="citation_div">
+    <div id="sortable">
+      <dl id="cite" class="ui-state-default">      	
+      </dl>
+    </div>
       <dl id="cite1">      
 	<dt id="citation_citation">Text</dt>
 	<dd id="citation_text">Waiting...</dd>      
       </dl>
-    </div>
-    <hr>
-    <input type="text" id="citations" value="bible_kjv Gen. 12:1-3 the (to :)">
+    <hr>    
+    <span id="detected_book">Book</span><input type="text" id="citations" value="Gen. 12:1-3 the (to :)"><br><span id="tooltip">Type your citation and hit <b>enter</b>..</span>
   </div>
+  
 </body>
