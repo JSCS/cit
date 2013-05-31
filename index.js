@@ -65,6 +65,6 @@ $(function(){
 });
 $( document ).ready(function() {
   $('#citations').focus();
-  $('#citations').val("bible_kjv Gen. 12:1-3 the (to :)");
+  $('#citations').val("Gen. 12:1-3 the (to :)");
   reload_citation();
 });
